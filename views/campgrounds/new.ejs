@@ -1,0 +1,49 @@
+<% layout('layouts/boilerplate') %> 
+<div class="row mt-5">
+    <h1 class="text-center">New Gym</h1>
+    <div class="col-6 offset-3">
+        <form action="/campgrounds" method="POST" class="validated-form" novalidate enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" class="form-control" name="campground[title]" id="title" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location:</label>
+                <input type="text" class="form-control" name="campground[location]" id="location" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="price" class="col-sm-3 col-form-label">Gym Price:</label>
+                <div class="col-sm-9">
+                    <div class="input-group">
+                        <span class="input-group-text" id="price-label">$</span>
+                        <input type="text" class="form-control" id="price" placeholder="0.00" name="campground[price]" aria-describedby="price-label" required>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description:</label>
+                <textarea class="form-control" name="campground[description]" id="description" rows="5" required></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Upload images:</label>
+                <input class="form-control" type="file" id="image" name="image" multiple required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-5 text-center">
+                <button class="btn btn-lg btn-success">Add Gym</button>
+            </div>
+        </form>
+        <a href="/campgrounds">All Gyms</a>
+    </div>
+</div>
